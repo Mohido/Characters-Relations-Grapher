@@ -1,3 +1,13 @@
+# Custom Ignores
+*package-lock.json
+*node_modules/*
+*dist/*
+*out/
+tmp/*
+/out-tsc
+*.out
+
+
 # Logs
 logs
 *.log
