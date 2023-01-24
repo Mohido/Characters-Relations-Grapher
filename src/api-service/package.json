@@ -1,0 +1,33 @@
+{
+    "name": "crg-api-service",
+    "version": "0.0.1",
+    "description": "Provides the backend service for the Characters-Relations-Graph web application. This services is the gateway to the Database and Auth service.",
+    "scripts": {
+      "build-js": "babel --presets @babel/preset-env src --extensions \".js\" -d out --source-maps", 
+      "build-ts" : "tsc",
+      "build": "npm run build-ts && npm run build-js",
+      "start": "npm run build && node out/server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/MGD-EXE/Characters-Relations-Graph.git"
+    },
+    "keywords": [],
+    "author": "Mohammed Al-Mahdawi, Mohammed Al-dokimi, Asseel Al-Mahdawi",
+    "bugs": {
+      "url": "https://github.com/MGD-EXE/Characters-Relations-Graph/issues"
+    },
+    "homepage": "https://github.com/MGD-EXE/Characters-Relations-Graph/blob/main/README.md",
+    "dependencies": {
+      "express": "4.18.2"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.0.0",
+      "@babel/core": "^7.0.0",
+      "@babel/preset-env": "^7.16.11",
+      "@babel/preset-typescript": "^7.16.0",
+      "@types/node": "18.11.18",
+      "typescript": "^4.9.4"    
+    }
+  }
+  
