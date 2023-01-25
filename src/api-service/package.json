@@ -6,7 +6,7 @@
         "build-js": "babel --presets @babel/preset-env src --extensions \".js\" -d out --source-maps",
         "build-ts": "tsc",
         "build": "npm run build-ts && npm run build-js",
-        "start": "npm run build && node src/server.js",
+        "start": "npm run build && node out/server.js",
         "dev": "nodemon --config nodemon.json src/server.ts"
     },
     "repository": {
@@ -20,12 +20,10 @@
     },
     "homepage": "https://github.com/MGD-EXE/Characters-Relations-Graph/blob/main/README.md",
     "dependencies": {
-        "@babel/plugin-transform-modules-commonjs": "^7.20.11",
-        "body-parser": "^1.20.1",
         "cors": "^2.8.5",
         "express": "^4.18.2",
         "helmet": "^6.0.1",
-        "morgan": "^1.10.0"
+        "tslog": "^4.7.1"
     },
     "devDependencies": {
         "@babel/cli": "^7.0.0",
