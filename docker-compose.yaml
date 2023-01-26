@@ -49,18 +49,23 @@ services:
             - postgre-service
 
     postgre-service:
-        image: postgre-service:latest # This image is preloaded with the data we need. Setting up shared volumes or copying the data with dockercompose volumes had problems
+        image: postgres:alpine # This image is preloaded with the data we need. Setting up shared volumes or copying the data with dockercompose volumes had problems
         hostname: postgre-service
         ports:
             - 5432:5432
+        volumes:
+            - ./src/postgre-service/sql/:/docker-entrypoint-initdb.d/
+            - ./src/postgre-service/data/:/var/lib/postgresql/data/
         env_file:
             - ./src/postgre-service/env/postgres.env
         
 
     # Environment variables are set when the image is created
     pgadmin-service:
-        image: pgadmin-service:latest
+        image: dpage/pgadmin4:latest
         hostname: pgadmin-service
+        env_file:
+            - ./src/pgadmin-service/env/pgadmin.env
         links:
             - postgre-service
         restart: always

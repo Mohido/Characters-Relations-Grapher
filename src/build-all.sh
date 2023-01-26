@@ -40,30 +40,6 @@ then
 
     echo "----------------------------------------------------------------------------------- ";
 
-    # Building the clean database
-    echo "Building the postgre-service ...";
-    cd postgre-service && docker build . -t postgre-service:latest;
-    if [ $? -ne 0 ]
-    then 
-        echo "Failed to build the image... Exitting with code $?";
-        exit;
-    fi;
-    cd ..;
-
-    echo "----------------------------------------------------------------------------------- ";
-
-    # Building the cpgadmin
-    echo "Building the pgadmin-service ...";
-    cd pgadmin-service && docker build . -t pgadmin-service:latest;
-    if [ $? -ne 0 ]
-    then 
-        echo "Failed to build the image... Exitting with code $?";
-        exit;
-    fi;
-    cd ..;
-
-    echo "----------------------------------------------------------------------------------- ";
-
     # Final step to make your "docker images" command outputs pretty stuff. 
     echo "Deleting all <none> images in docker...";
     docker images | grep "<none>" | awk '{ print $3; }' | xargs docker rmi -f; # cleaning the docker junk docker images.
