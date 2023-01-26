@@ -1,1 +1,1 @@
-CRG_DB:5432:*:postgres:postgres
+postgre-service:5432:*:postgres:postgres

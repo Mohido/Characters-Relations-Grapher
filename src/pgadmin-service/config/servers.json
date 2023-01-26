@@ -5,7 +5,7 @@
             "Group": "Postgres",
             "Port": 5432,
             "Username": "postgres",
-            "Host": "CRG",
+            "Host": "postgres-service",
             "SSLMode": "prefer",
             "PassFile": "/passes/postgres_pass",
             "MaintenanceDB": "postgres"

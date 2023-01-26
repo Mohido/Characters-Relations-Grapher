@@ -1,0 +1,70 @@
+version: '3.3'
+
+services:   
+    nginx-service:
+        image: nginx:latest
+        ports:
+            - 81:80
+        volumes:
+            - ./src/nginx-service/config/nginx.conf:/etc/nginx/nginx.conf
+        links:
+            - api-service
+            - gui-service
+            - pgadmin-service
+            - postgre-service
+            - keycloak-service
+
+    api-service:
+        image: api-service:latest
+        ports:
+            - 5000:5000
+        hostname: api-service
+        depends_on:
+            - postgre-service
+            - keycloak-service
+        links:
+            - postgre-service
+            - keycloak-service
+
+    gui-service:
+        image: gui-service:latest
+        ports:
+            - 5001:80
+        hostname: gui-service
+        depends_on:
+            - api-service
+
+    keycloak-service:
+        image: jboss/keycloak:16.1.0
+        hostname: keycloak-service
+        ports:
+            - 8081:8081
+        entrypoint: /bin/sh -c
+        command: ["sleep 5 && /opt/jboss/tools/docker-entrypoint.sh -b 0.0.0.0 -Djboss.http.port=8081 -Dkeycloak.profile.feature.upload_scripts=enabled"]
+        env_file: 
+            - src/keycloak-service/env/keycloak.env
+        depends_on:
+            - postgre-service
+        links:
+            - postgre-service
+
+    postgre-service:
+        image: postgre-service:latest # This image is preloaded with the data we need. Setting up shared volumes or copying the data with dockercompose volumes had problems
+        hostname: postgre-service
+        ports:
+            - 5432:5432
+        env_file:
+            - ./src/postgre-service/env/postgres.env
+        
+
+    # Environment variables are set when the image is created
+    pgadmin-service:
+        image: pgadmin-service:latest
+        hostname: pgadmin-service
+        links:
+            - postgre-service
+        restart: always
+        ports:
+            - 5004:80
+        depends_on:
+            - postgre-service
