@@ -45,6 +45,12 @@ then
     docker images | grep "<none>" | awk '{ print $3; }' | xargs docker rmi -f; # cleaning the docker junk docker images.
 
     echo "----------------------------------------------------------------------------------- ";
+
+
+    echo "Removing Postgres Saved Data"
+    rm -rf postgre-service/data
+    
+    echo "----------------------------------------------------------------------------------- ";
 fi;
 
 

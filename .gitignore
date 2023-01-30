@@ -7,6 +7,8 @@ tmp/*
 /out-tsc
 *.out
 
+*temp/*
+
 
 # Logs
 logs
