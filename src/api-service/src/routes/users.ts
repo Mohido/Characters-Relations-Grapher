@@ -2,20 +2,50 @@
 import { Router } from "express";
 import RouterPromise from 'express-promise-router';
 import { Logger } from "tslog";
+import config from "../settings/config";
+import { ClientResponse } from "../utils/keycloak-client";
 
 const router :Router = RouterPromise();
 const logger: Logger<Router> = new Logger();
 
 
-router.get('/', (req, res, next) => {
-    logger.silly("I am a silly log.");
-    logger.trace("I am a trace log.");
-    logger.debug("I am a debug log.");
-    logger.info("I am an info log.");
-    logger.warn("I am a warn log with a json object:", { foo: "bar" });
-    logger.error("I am an error log.");
-    // logger.fatal(new Error("I am a pretty Error with a stacktrace."));
-    return res.status(200).send("Hello");
+
+
+router.post('/:username/login', async (req, res, next) => {
+    let clientResponse : ClientResponse = await config.kc_client.createUserTokens(req.params.username, req.body.password);
+    if(clientResponse.result){
+        res.status(200).send({tokens: clientResponse.result});
+    }
+    else{
+        logger.error(clientResponse.error);
+        res.status(500).send({error: clientResponse.error});
+    }
+});
+
+
+
+router.post('/:username/signup', async (req, res, next) => {
+    //! TODO:
+});
+
+router.post('/:username/logout', async (req, res, next) => {
+    //! TODO:
+});
+
+
+
+/**
+ * Test.. accessed for logged in user
+ */
+router.get('/:username/test', async (req,res,next) => {
+    // TODO:
+});
+
+/**
+ * Test.. accessed for all users
+ */
+router.get('/test', async (req,res,next) => {
+    
 });
 
 

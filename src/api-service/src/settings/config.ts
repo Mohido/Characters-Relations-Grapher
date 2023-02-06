@@ -7,23 +7,41 @@
  * 
  */
 import {MemoryStore} from 'express-session';
+import { KeycloakClient } from '../utils/keycloak-client';
+
+namespace API{
+   
+    export interface ServiceConfiguration{
+        api_port: number,
+        api_dns: string,            // Current API domain name. e.g: www.hello.com
+        auth_dns: string,           // Authentication Service domain name. e.g: www.hello.com
+        postgre_dns: string,        // PostgreSQL Database service domain name. e.g: www.hello.com
+        tls_path?: string,
+        memory_store?: any,
+        session_secret? : string,
+        kc_client?: KeycloakClient
+    }
+}
 
 
-export interface APIConfiguration {
-    port: number,
-    host_dns: string,
-    auth_service: string,
-    postgre_service: string,
-    tls_path?: string,
-    memory_store?: any,
-    session_secret? : string
-};
 
+
+/**
+ * 
+ * This export contains all the data required to run the api. Most of the data come from environment variables.
+ */
+let memory_store : MemoryStore = new MemoryStore();
 export default {
-    port: process.env.PORT || 5001,
-    host_dns: process.env.HOSTNAME || "api-service",
-    auth_service:  process.env.AUTH_URL || "keycloak-service",
-    postgre_service: process.env.POSTGRE_URL || "postgre-service",
-    memory_store : new MemoryStore(),
-    session_secret : "this is a secret"
-} as APIConfiguration;
+    api_port: process.env.API_PORT || 5001,
+    api_dns: process.env.API_DNS || "localhost",
+    auth_dns:  process.env.AUTH_DNS || "localhost",
+    postgre_dns: process.env.POSTGRE_DNS || "localhost",
+    memory_store : memory_store,
+    session_secret : process.env.SESSION_SECRET || "this is a secret",
+    kc_client : new KeycloakClient({
+        client_id: process.env.KC_CLIENT_ID as string,
+        client_secret: process.env.KC_CLIENT_SECRET,
+        client_realm: process.env.KC_REALM,
+        keycloak_url: `http://${process.env.AUTH_DNS}:${process.env.AUTH_PORT || 8081}/auth/`
+    }, memory_store)
+} as API.ServiceConfiguration;

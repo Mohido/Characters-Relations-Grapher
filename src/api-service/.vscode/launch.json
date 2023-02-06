@@ -15,7 +15,17 @@
                 "${workspaceFolder}/out/**",
                 "!**/node_modules/**"
             ],
-            "cwd": "${workspaceFolder}/out"
+            "cwd": "${workspaceFolder}/out",
+            "env": {
+                "AUTH_DNS":"localhost",
+                "KC_CLIENT_ID":"crg-app",
+                "KC_CLIENT_SECRET":"DDrgd1mAZNBeLwdHwLGtm8VWZr8iD8kJ",
+                "KC_REALM":"CRG",
+                "API_PORT":"5005",
+                "API_DNS":"localhost",
+                "POSTGRE_DNS":"localhost",
+                "AUTH_PORT":"8081"
+            }
         }
     ]
 }
