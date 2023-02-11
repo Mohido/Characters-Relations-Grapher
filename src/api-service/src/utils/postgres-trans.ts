@@ -1,9 +1,5 @@
-import {Pool, PoolConfig, QueryConfig, QueryResult, PoolClient, QueryResultRow} from "pg";
+import {Pool, PoolConfig, QueryResult, PoolClient} from "pg";
 
-
-interface TransactionResult{
-    result?: any, error?:any
-}
 
 export class PostgreTransactioner{
 
