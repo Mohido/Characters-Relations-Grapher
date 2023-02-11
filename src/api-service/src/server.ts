@@ -2,7 +2,7 @@ import express from "express";
 import helmet from "helmet";
 import config from "./settings/config";
 import { Logger } from "tslog";
-import Routes from "./routes";
+import Routes from "./routes/index";
 import fs from 'fs';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
