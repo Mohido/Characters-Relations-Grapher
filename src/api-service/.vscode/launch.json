@@ -24,7 +24,11 @@
                 "API_PORT":"5005",
                 "API_DNS":"localhost",
                 "POSTGRE_DNS":"localhost",
-                "AUTH_PORT":"8081"
+                "AUTH_PORT":"8081",
+                "DB_USER":"postgres",
+                "DB_NAME":"crg_db",
+                "DB_PASSWORD":"postgres",
+                "DB_PORT":"5432"
             }
         }
     ]
