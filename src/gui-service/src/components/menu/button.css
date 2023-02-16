@@ -1,0 +1,27 @@
+.menu-button {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left: 20px;
+    top:20px;
+    cursor: pointer;
+    /* background-color: calc(var(--light-bg-color) - rgb(59, 59, 59)); */
+}
+
+
+.menu-button:hover {
+    border-color: rgb(52, 143, 255);
+    transition: border-color 0.3s;
+}
+
+.menu-button:hover i{
+    animation: menu-button-hover-animation 0.4s infinite alternate;
+}
+
+
+@keyframes menu-button-hover-animation {
+    0%   {left:0px;}
+    100%  {left:10px;}
+}

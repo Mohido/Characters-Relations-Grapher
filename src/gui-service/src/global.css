@@ -6,12 +6,26 @@
  *
  */
 
+:root {
+  --light-bg-color: rgb(225, 225, 225);
+  --light-txt-color: rgb(38, 38, 38);
+
+  --dark-bg-color: rgb(20, 20, 28);
+  --dark-txt-color: rgb(225, 225, 225);
+
+  --icon-color: rgb(44, 49, 95);
+}
 
  * {
 	margin: 0;
-	background-color: black;
+  padding:0;
+  box-sizing: border-box;
+	background-color: var(--dark-bg-color);
+	color: var(--dark-txt-color);
  }
 
- h1 {
-	color: white;
- }
+ i { 
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--icon-color);
+  position: relative;
+}
