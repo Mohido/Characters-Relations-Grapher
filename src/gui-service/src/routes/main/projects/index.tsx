@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import {MenuButton} from "~/components/menu/button"
+import Menu from "~/components/menu"
 
 
 
@@ -7,7 +7,7 @@ export default component$((props)=>{
     
     return (
         <dev>
-            <MenuButton></MenuButton>
+            <Menu></Menu>
         </dev>
     
     )
