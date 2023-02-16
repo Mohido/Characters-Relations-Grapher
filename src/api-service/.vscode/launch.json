@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**",
+                "${workspaceFolder}/node_modules/**"
+            ],
+            "program": "${workspaceFolder}/out/server.js",
+            "preLaunchTask": "npm: build",
+            "outFiles": [
+                "${workspaceFolder}/out/**",
+                "!**/node_modules/**"
+            ],
+            "cwd": "${workspaceFolder}/out",
+            "env": {
+                "AUTH_DNS":"localhost",
+                "KC_CLIENT_ID":"crg-app",
+                "KC_CLIENT_SECRET":"DDrgd1mAZNBeLwdHwLGtm8VWZr8iD8kJ",
+                "KC_REALM":"CRG",
+                "API_PORT":"5005",
+                "API_DNS":"localhost",
+                "POSTGRE_DNS":"localhost",
+                "AUTH_PORT":"8081",
+                "DB_USER":"postgres",
+                "DB_NAME":"crg_db",
+                "DB_PASSWORD":"postgres",
+                "DB_PORT":"5432"
+            }
+        }
+    ]
+}
