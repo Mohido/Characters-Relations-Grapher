@@ -1,0 +1,25 @@
+.search-panel{
+    position: fixed;
+    right: calc(var(--buttons-margin)*2 + var(--buttons-sizes)*2);
+    top: calc(var(--buttons-margin) + 5px);
+
+    width: 0px;
+    height: calc(var(--buttons-sizes) - 10px);
+
+    border: 5px solid aliceblue;
+    border-radius: 10%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.1s linear;
+    z-index: -1000;
+    padding: 10px;
+}
+
+.search-panel-visible{
+    width: 230px;
+    outline: none;
+    opacity: 1;
+    /* border: 5px solid rgb(52, 143, 255); */
+    visibility: visible;
+    z-index: 1000;
+}
