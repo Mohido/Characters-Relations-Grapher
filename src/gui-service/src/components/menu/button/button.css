@@ -1,12 +1,12 @@
 .menu-button {
-    top:20px;
+    top:var(--buttons-margin);
     background-color: white;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: var(--buttons-sizes);
+    height: var(--buttons-sizes);
     position: fixed;
     transition: all 0.5s ease;
-    left:20px;
+    left:var(--buttons-margin);
     cursor: pointer;
     /* background-color: calc(var(--light-bg-color) - rgb(59, 59, 59)); */
 }
@@ -24,7 +24,6 @@
 
 .menu-button:hover {
     border-color: rgb(52, 143, 255);
-  
 }
 
 .menu-button:hover i{

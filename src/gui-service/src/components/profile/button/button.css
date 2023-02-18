@@ -1,0 +1,26 @@
+.profile-button{
+    top:var(--buttons-margin);
+    background-color: white;
+    border-radius: 50%;
+    width: var(--buttons-sizes);
+    height: var(--buttons-sizes);
+    position: fixed;
+    transition: all 0.5s ease;
+    right:var(--buttons-margin);
+    cursor: pointer;
+}
+
+.profile-button:hover {
+    border-color: rgb(52, 143, 255);
+    animation: profile-button-hover-animation 0.3s ease-in-out alternate infinite;
+}
+
+
+.profile-button i{
+    font-size: large;
+}
+
+@keyframes profile-button-hover-animation {
+    0%   {transform: rotate(-10deg);}
+    100%  {transform: rotate(10deg);}
+}

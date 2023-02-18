@@ -15,6 +15,13 @@
 
   --icon-color: rgb(44, 49, 95);
   --menu-panel-width:300px;
+
+  --buttons-sizes:50px;
+  --buttons-margin:20px;
+  
+  --profile-panel-width:500px;
+
+
 }
 
  * {
