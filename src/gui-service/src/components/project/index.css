@@ -1,0 +1,33 @@
+.project-box {
+    padding: 1em;
+    background-color: aliceblue;
+    border-radius: 5px;
+    width: 250px;
+    height: 250px;
+}
+
+.project-box .project-name{
+    font-size: 2em;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    height: 80px;
+    border-bottom: 1px solid black;
+    overflow: auto;
+}
+
+.project-box .project-description{
+    font-size: 1em;
+    height: 80px;
+    margin-top: 10px;
+    border-bottom: 1px solid brown;
+    overflow: auto;
+}
+
+.project-box .project-update{
+    font-size: 0.7em;
+    margin: 10px auto auto auto;
+    font-weight: lighter;
+
+    font-style: italic;
+}

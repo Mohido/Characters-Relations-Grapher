@@ -1,0 +1,12 @@
+.content {
+    display: flex;
+    border: 2px dotted green;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    gap:1.5em;
+    width: 80vw;
+    margin: 15vh auto 15vh auto;
+    padding: 10px;
+
+}
