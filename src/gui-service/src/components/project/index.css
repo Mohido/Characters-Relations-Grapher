@@ -3,17 +3,20 @@
     background-color: aliceblue;
     border-radius: 5px;
     width: 250px;
-    height: 250px;
+    /* height: 250px; */
 }
 
 .project-box .project-name{
     font-size: 2em;
     font-weight: 400;
     font-style: italic;
+    text-overflow: ellipsis;
     text-align: center;
-    height: 80px;
+    height: 50px;
     border-bottom: 1px solid black;
-    overflow: auto;
+    /* overflow: auto; */
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .project-box .project-description{
@@ -24,10 +27,10 @@
     overflow: auto;
 }
 
-.project-box .project-update{
+.project-box .project-extra{
     font-size: 0.7em;
     margin: 10px auto auto auto;
     font-weight: lighter;
-
     font-style: italic;
+    overflow: auto;
 }
