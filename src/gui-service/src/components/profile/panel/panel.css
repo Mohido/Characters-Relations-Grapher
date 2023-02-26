@@ -1,0 +1,24 @@
+.profile-panel{
+    position: fixed;
+    width: var(--profile-panel-width);
+    height: var(--profile-panel-width);
+
+    left: 50%;
+    top:50%;
+    margin-top: calc(var(--profile-panel-width)/2 * -1);
+    margin-left: calc(var(--profile-panel-width)/2 * -1);
+
+    border: 5px solid aliceblue;
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s linear;
+    z-index: -1000;
+}
+
+.profile-panel-visible{
+    background-color: aliceblue;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+}

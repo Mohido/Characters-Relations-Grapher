@@ -1,0 +1,37 @@
+.menu-button {
+    top:var(--buttons-margin);
+    background-color: white;
+    border-radius: 50%;
+    width: var(--buttons-sizes);
+    height: var(--buttons-sizes);
+    position: fixed;
+    transition: all 0.5s ease;
+    left:var(--buttons-margin);
+    cursor: pointer;
+    /* background-color: calc(var(--light-bg-color) - rgb(59, 59, 59)); */
+}
+
+.menu-open-button-translation{
+    left: calc(var(--menu-panel-width) + 20px);
+    transform: rotate(540deg);
+}
+
+
+.menu-button i {
+    position: relative;
+    top: 1px;
+}
+
+.menu-button:hover {
+    border-color: rgb(52, 143, 255);
+}
+
+.menu-button:hover i{
+    animation: menu-button-hover-animation 0.4s infinite alternate;
+}
+
+
+@keyframes menu-button-hover-animation {
+    0%   {left:0px;}
+    100%  {left:10px;}
+}

@@ -1,0 +1,35 @@
+.search-button {
+    top:var(--buttons-margin);
+    background-color: white;
+    border-radius: 50%;
+    width: var(--buttons-sizes);
+    height: var(--buttons-sizes);
+    position: fixed;
+    transition: all 0.5s ease;
+    right:calc(var(--buttons-margin) * 2 + var(--buttons-sizes));
+    cursor: pointer;
+    /* background-color: calc(var(--light-bg-color) - rgb(59, 59, 59)); */
+}
+
+.search-button i {
+    position: relative;
+    top: 1px;
+}
+
+.search-button:hover {
+    border-color: rgb(52, 143, 255);
+}
+
+.search-button-active {
+    border-color: rgb(52, 143, 255);
+}
+
+.search-button:hover i{
+    animation: search-button-hover-animation 0.4s infinite alternate;
+}
+
+
+@keyframes search-button-hover-animation {
+    0%   {font-size:100%; transform: rotate(-10deg);}
+    100%  {font-size:120%;transform: rotate(10deg);}
+}

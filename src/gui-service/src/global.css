@@ -6,12 +6,37 @@
  *
  */
 
+:root {
+  --light-bg-color: rgb(225, 225, 225);
+  --light-txt-color: rgb(38, 38, 38);
+
+  --dark-bg-color: rgb(20, 20, 28);
+  --dark-txt-color: rgb(225, 225, 225);
+
+  --icon-color: rgb(44, 49, 95);
+  --menu-panel-width:300px;
+
+  --buttons-sizes:50px;
+  --buttons-margin:20px;
+  
+  --profile-panel-width:500px;
+
+
+}
+
+body{
+  background-color: var(--dark-bg-color);
+	/* color: var(--dark-txt-color); */
+}
 
  * {
 	margin: 0;
-	background-color: black;
+  padding:0;
+  box-sizing: border-box;
  }
 
- h1 {
-	color: white;
- }
+ i { 
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--icon-color);
+  position: relative;
+}

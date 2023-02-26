@@ -18,6 +18,7 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
+        
         <RouterHead />
       </head>
       <body lang="en">
