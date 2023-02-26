@@ -1,0 +1,25 @@
+.projects-content {
+    display: flex;
+    /* border: 1px solid green; */
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    gap:1.5em;
+    
+    /* margin: 0 auto 0 auto; */
+    padding: 20px 10px 10px 10px;
+}
+
+
+.projects-container{
+    width: 80vw;
+    margin: 50px auto 0 auto;
+}
+
+.projects-header{
+    position: relative;
+    color: var(--light-bg-color);
+    top:10px;
+    left:0;
+    border-bottom: 1px solid white;
+}

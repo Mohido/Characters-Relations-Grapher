@@ -1,36 +1,120 @@
 .project-box {
-    padding: 1em;
     background-color: aliceblue;
-    border-radius: 5px;
+    border-radius: 20%;
     width: 250px;
-    /* height: 250px; */
+    transition: all 0.2s ease-in-out;
 }
 
-.project-box .project-name{
+.project-box .project-box-hoverer{
+    display: block;
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+}
+
+.project-box .project-box-hoverer:hover {
+    
+    cursor: pointer;
+    outline: 2px solid rgb(52, 143, 255);
+
+}
+
+
+/* ---------------- Image ------------ */
+.project-box .project-box-image{
+    width: 100%;
+    height: 100px;
+}
+
+
+/* --------------- Title ------------- */
+.project-box .project-box-title{
     font-size: 2em;
     font-weight: 400;
     font-style: italic;
     text-overflow: ellipsis;
-    text-align: center;
-    height: 50px;
-    border-bottom: 1px solid black;
-    /* overflow: auto; */
-    overflow: hidden;
+    text-align: left;
     white-space: nowrap;
+    overflow: hidden;
+
+    margin: 0 0 0 10px;
+    
+    height: 40px;
 }
 
-.project-box .project-description{
+
+/* ------------------------ Box Description ------------------------- */
+.project-box .project-box-description{
     font-size: 1em;
-    height: 80px;
-    margin-top: 10px;
-    border-bottom: 1px solid brown;
-    overflow: auto;
+    height: 50px;
+    position: relative;
+    padding: 5px 20px 0 20px;
+    width: 100%;
+    overflow: hidden;
 }
 
-.project-box .project-extra{
-    font-size: 0.7em;
-    margin: 10px auto auto auto;
-    font-weight: lighter;
-    font-style: italic;
-    overflow: auto;
+.project-box .project-box-description::after{
+    content: '';
+    border-radius: 10px;
+    position: absolute;
+    background: linear-gradient( rgba(255,255,255,0), rgba(255,255,255,0.5) 30%  , rgba(255,255,255,1));
+    height: 30px;
+    width: 100%;
+    bottom:0;
+    left: 0;
+}
+
+
+
+/* ----------------- EXTRA Section 1 -------- */
+.project-box .project-box-extra-1{
+    /* border: 5px dotted blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2px 0 2px 0 ;
+    gap: 3px;
+    background-color: var(--dark-bg-color);
+    text-align: center;
+}
+
+
+.project-box .project-box-extra-1 div{
+    border-radius: 5px;
+
+    background-color: aliceblue;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 40%;
+}
+
+.project-box .project-box-extra-1 div div:first-child {
+    font-size: smaller;
+}
+
+.project-box .project-box-extra-1 div div:last-child {
+    font-size:medium;
+}
+
+
+
+/* ---------------------- Extra 2 section */
+
+.project-box .project-box-extra-2{
+    display: flex;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 5px;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+
+.project-box .project-box-extra-2 div span{
+    padding-left: 5px;
+}
+
+.project-box .project-box-extra-2 div button{
+    border: none;
+    cursor: pointer;
 }
